@@ -1,6 +1,7 @@
 let body = document.body;
 let container = document.createElement("div");
 let btn = document.createElement("button");
+let gridPerSide = 16;
 
 btn.style.width = "320px";
 btn.style.height = "40px";
@@ -17,10 +18,10 @@ container.style.height = "640px";
 container.style.backgroundColor = "red";
 container.setAttribute("class", "container");
 
-for (let i = 0; i < 256; i++) {
+for (let i = 0; i < (gridPerSide * gridPerSide); i++) {
     const grid = document.createElement("div");
-    grid.style.width = "40px";
-    grid.style.height = "40px";
+    grid.style.width = `${640 / gridPerSide}px`;
+    grid.style.height = `${640 / gridPerSide}px`;
     grid.style.backgroundColor = "grey";
     grid.style.border = "1px solid black";
     grid.setAttribute("class", "grid");
