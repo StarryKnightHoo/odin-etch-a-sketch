@@ -18,6 +18,13 @@ container.style.height = "640px";
 container.style.backgroundColor = "red";
 container.setAttribute("class", "container");
 
+const color =  () => {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+};
+
 for (let i = 0; i < (gridPerSide * gridPerSide); i++) {
     const grid = document.createElement("div");
     grid.style.width = `${640 / gridPerSide}px`;
@@ -27,7 +34,7 @@ for (let i = 0; i < (gridPerSide * gridPerSide); i++) {
     grid.setAttribute("class", "grid");
     container.appendChild(grid);
     grid.addEventListener("mouseenter", () => {
-        grid.style.backgroundColor = "purple";
+        grid.style.backgroundColor = color();
     });
 }
 
@@ -50,7 +57,7 @@ btn.addEventListener("click", () => {
     grid.setAttribute("class", "grid");
     container.appendChild(grid);
     grid.addEventListener("mouseenter", () => {
-        grid.style.backgroundColor = "purple";
+        grid.style.backgroundColor = color();
     })
     }
 
