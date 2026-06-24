@@ -1,2 +1,10 @@
 /* CSS Sheet */
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid {
+    box-sizing: border-box;
+}
