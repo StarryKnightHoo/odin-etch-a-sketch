@@ -1,6 +1,15 @@
 let body = document.body;
 let container = document.createElement("div");
+let btn = document.createElement("button");
 
+btn.style.width = "320px";
+btn.style.height = "40px";
+btn.style.margin = "8px 160px";
+btn.textContent = "New Grid";
+btn.style.fontSize = "30px";
+btn.style.fontFamily = "Roboto";
+btn.setAttribute("class", "button");
+body.appendChild(btn);
 body.appendChild(container);
 
 container.style.width = "640px";
