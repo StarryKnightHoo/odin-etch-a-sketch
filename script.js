@@ -15,8 +15,9 @@ body.appendChild(container);
 
 container.style.width = "640px";
 container.style.height = "640px";
-container.style.backgroundColor = "red";
+container.style.backgroundColor = "grey";
 container.setAttribute("class", "container");
+
 
 const color =  () => {
     const r = Math.floor(Math.random() * 256);
@@ -24,6 +25,7 @@ const color =  () => {
     const b = Math.floor(Math.random() * 256);
     return `rgb(${r}, ${g}, ${b})`;
 };
+
 
 for (let i = 0; i < (gridPerSide * gridPerSide); i++) {
     const grid = document.createElement("div");
@@ -34,7 +36,11 @@ for (let i = 0; i < (gridPerSide * gridPerSide); i++) {
     grid.setAttribute("class", "grid");
     container.appendChild(grid);
     grid.addEventListener("mouseenter", () => {
-        grid.style.backgroundColor = color();
+        if (grid.style.backgroundColor == "grey") {
+            grid.style.backgroundColor = color();
+        }
+        let currentOpacity = Number(grid.style.opacity) || 0;
+        grid.style.opacity = currentOpacity + 0.1;
     });
 }
 
@@ -57,8 +63,14 @@ btn.addEventListener("click", () => {
     grid.setAttribute("class", "grid");
     container.appendChild(grid);
     grid.addEventListener("mouseenter", () => {
-        grid.style.backgroundColor = color();
+        if (grid.style.backgroundColor == "grey") {
+            grid.style.backgroundColor = color();
+        }
+        let currentOpacity = Number(grid.style.opacity) || 0;
+        grid.style.opacity = currentOpacity + 0.1;
     })
     }
+
+
 
 });
